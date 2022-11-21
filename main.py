@@ -3,7 +3,6 @@ import re
 print ("Hello, please, enter filename (example filename: text.txt):")
 
 entry = str(input())
-#entry = "text.txt"
 
 with open(entry) as file:
   Text = file.readlines()
@@ -17,5 +16,5 @@ for i in range(len(Text)):
     for j in range(len(numbersBinaryNotation)):
       k = int(numbersBinaryNotation[j], 2)
       if k%3 == 0:
-        print ( Text[i])
+        print (Text[i])
         break;
