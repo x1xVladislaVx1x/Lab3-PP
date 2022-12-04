@@ -10,11 +10,7 @@ with open(entry) as file:
 print ("Required lines:")
 
 for i in range(len(Text)):
-  numbersTest = re.search(r'[0-1]{2,}', Text[i])
-  numbersBinaryNotation = re.findall(r'[0-1]{2,}', Text[i])
-  if numbersTest != None:
-    for j in range(len(numbersBinaryNotation)):
-      k = int(numbersBinaryNotation[j], 2)
-      if k%3 == 0:
-        print (Text[i])
-        break;
+  numbersTest1 = re.search('([^\d]|^)(?:(25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)\.){3}(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)([^\d]|$)', Text[i], flags=re.MULTILINE)
+
+  if numbersTest1 != None:
+    print (Text[i])
